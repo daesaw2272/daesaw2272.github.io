@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ken Kyaw, Data Analyst</title>
+<meta name="description" content="Portfolio of Kaung Khant (Ken) Kyaw: SQL, Power BI, Tableau and Python projects with the findings behind them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5f6f3;
+  --sheet:#ffffff;
+  --ink:#17222e;
+  --muted:#56616e;
+  --rule:#d8ddd8;
+  --teal:#0f6b66;
+  --mark:rgba(242,193,78,.55);
+  --code-bg:#17222e;
+  --code-ink:#e9ecef;
+  --code-kw:#8fd3cc;
+  --code-cm:#94a1ae;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#141b22;--sheet:#1b242d;--ink:#e8ebe9;--muted:#a3adb7;--rule:#2d3944;
+    --teal:#6fc7bf;--mark:rgba(242,193,78,.32);--code-bg:#0f151b;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.55;font-variant-numeric:tabular-nums}
+a{color:var(--teal);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+img{max-width:100%;display:block}
+figure{margin:0}
+
+/* header */
+header.wrap{padding-top:72px;padding-bottom:56px}
+.who{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:baseline}
+h1{font-size:clamp(40px,7vw,72px);line-height:1;letter-spacing:-.025em;font-weight:800;margin:0}
+.links{display:flex;flex-wrap:wrap;gap:6px 20px;font-weight:500}
+.lede{max-width:40ch;font-size:clamp(20px,2.4vw,24px);line-height:1.35;margin:28px 0 0;font-weight:500}
+.lede span{color:var(--muted);font-weight:400}
+
+/* findings: the one memorable thing */
+.findings{margin:52px 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.findings li{border-bottom:1px solid var(--rule)}
+.findings a{display:grid;grid-template-columns:minmax(0,1fr) 15ch;gap:8px 32px;padding:18px 0;color:inherit;text-decoration:none;align-items:baseline}
+.findings a:hover .src,.findings a:focus-visible .src{color:var(--teal);text-decoration:underline}
+.findings q{quotes:none;font-size:clamp(19px,2.2vw,23px);line-height:1.35}
+.src{color:var(--muted);font-size:15px;text-align:right}
+mark{background:linear-gradient(var(--mark),var(--mark)) no-repeat 0 62%/100% 58%;color:inherit;padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.findings mark{animation:sweep .9s cubic-bezier(.2,.7,.2,1) both}
+.findings li:nth-child(2) mark{animation-delay:.18s}
+.findings li:nth-child(3) mark{animation-delay:.36s}
+@keyframes sweep{from{background-size:0 58%}to{background-size:100% 58%}}
+@media (prefers-reduced-motion:reduce){.findings mark{animation:none}}
+
+/* projects */
+main h2{font-size:15px;font-weight:600;color:var(--muted);margin:0 0 8px;letter-spacing:.01em}
+.work{padding:40px 0 24px}
+.project{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;padding:48px 0;border-top:1px solid var(--rule)}
+.project:nth-of-type(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.project:nth-of-type(even) .media{order:2}
+.media{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:12px;align-self:start}
+.media img{border-radius:3px;width:100%;height:auto}
+.media figcaption{font-size:14px;color:var(--muted);margin:10px 2px 0}
+.project h3{font-size:clamp(24px,3vw,30px);line-height:1.15;letter-spacing:-.01em;margin:0 0 6px;font-weight:700}
+.tools{color:var(--muted);font-size:15px;margin:0 0 18px}
+.finding{font-size:19px;line-height:1.4;font-weight:500;margin:0 0 16px}
+.project p{margin:0 0 14px;max-width:62ch}
+.role{font-size:15px;color:var(--muted)}
+.more-links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:6px;font-weight:500}
+
+/* code and table media */
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);border-radius:3px;padding:20px 22px;overflow:auto;font:14px/1.6 ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+pre .k{color:var(--code-kw);font-weight:600}
+pre .c{color:var(--code-cm)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+caption{text-align:left;font-size:14px;color:var(--muted);padding:2px 2px 10px}
+th,td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--rule)}
+th:first-child,td:first-child{text-align:left}
+thead th{font-weight:600;color:var(--muted);font-size:14px}
+tbody th{font-weight:500}
+td.best{font-weight:700}
+td.best span{background:linear-gradient(var(--mark),var(--mark)) no-repeat 0 62%/100% 58%;padding:0 3px}
+
+/* other work, skills, contact */
+.other{padding:48px 0;border-top:1px solid var(--rule)}
+.other ul{list-style:none;padding:0;margin:12px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 40px}
+.other li strong{display:block;font-size:18px;margin-bottom:4px}
+.other li span{color:var(--muted);font-size:15px;display:block}
+.skills{padding:48px 0;border-top:1px solid var(--rule)}
+.skills dl{display:grid;grid-template-columns:16ch minmax(0,1fr);gap:10px 32px;margin:12px 0 0}
+.skills dt{font-weight:600}
+.skills dd{margin:0;color:var(--ink)}
+footer.wrap{padding-top:48px;padding-bottom:72px}
+footer .inner{border-top:1px solid var(--rule);padding-top:48px}
+footer p{font-size:clamp(22px,3vw,28px);font-weight:600;margin:0 0 14px;max-width:30ch;line-height:1.25}
+
+@media (max-width:820px){
+  header.wrap{padding-top:48px;padding-bottom:40px}
+  .project,.project:nth-of-type(even){grid-template-columns:minmax(0,1fr);gap:24px;padding:36px 0}
+  .media{padding:8px}
+  th,td{padding:8px 6px}
+  table{font-size:14px}
+  .project:nth-of-type(even) .media{order:0}
+  .findings a{grid-template-columns:1fr}
+  .src{text-align:left}
+  .other ul{grid-template-columns:1fr}
+  .skills dl{grid-template-columns:1fr;gap:2px}
+  .skills dd{margin-bottom:12px}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="who">
+    <h1>Ken Kyaw</h1>
+    <nav class="links" aria-label="Profiles">
+      <a href="https://www.linkedin.com/in/kaungkhantkyawken/">LinkedIn</a>
+      <a href="https://github.com/daesaw2272">GitHub</a>
+      <a href="KaungKhantKyaw_CV.pdf">CV (PDF)</a>
+      <a href="mailto:kankhoukkyaw@gmail.com">Email</a>
+    </nav>
+  </div>
+  <p class="lede">Data analyst working in SQL, Power BI, Tableau and Python. <span>Computing Science (Honours) student at UTS, Sydney, with a data analyst internship at KBZ Bank.</span></p>
+
+  <ol class="findings" aria-label="Findings from my projects">
+    <li><a href="#olist-dashboard"><q>92% of orders arrive on time, but <mark>only 3% of customers ever order again</mark>.</q><span class="src">Power BI</span></a></li>
+    <li><a href="#olist-sql"><q>Late deliveries drag reviews <mark>below 3 stars</mark>, against 4.2 for orders that arrive on time.</q><span class="src">PostgreSQL</span></a></li>
+    <li><a href="#retail-forecast"><q>SARIMA forecast state retail turnover to <mark>within about 1.4%</mark> on months it had never seen.</q><span class="src">Python</span></a></li>
+  </ol>
+</header>
+
+<main class="wrap">
+  <section class="work" aria-labelledby="work-h">
+    <h2 id="work-h">Selected work</h2>
+
+    <article class="project" id="olist-dashboard">
+      <figure class="media">
+        <img src="assets/olist-dashboard.jpg" width="839" height="475" alt="Power BI executive summary page showing orders by month, on-time delivery rate, total revenue, top product categories and orders by state">
+        <figcaption>Executive summary page, one of four</figcaption>
+      </figure>
+      <div>
+        <h3>Olist e-commerce performance dashboard</h3>
+        <p class="tools">Power BI, DAX, Power Query</p>
+        <p class="finding">Delivery is mostly reliable, so the bigger problem is retention: only 3% of customers place a second order.</p>
+        <p>A four-page report on 99,281 orders from a Brazilian online marketplace, covering revenue, logistics, customers and sellers. I modelled nine related tables and wrote 18 DAX measures, including on-time delivery rate, average order value, repeat customers and top and bottom category rankings with RANKX.</p>
+        <div class="more-links"><a href="https://drive.google.com/drive/folders/1BcvSmQ5IN4rUlsfI_-hJqbkY0EPMmRIV?usp=sharing">Download the Power BI files (Google Drive)</a></div>
+      </div>
+    </article>
+
+    <article class="project" id="olist-sql">
+      <figure class="media">
+<pre aria-label="SQL query ranking the top sellers in each state"><span class="c">-- Top sellers in each state</span>
+<span class="k">WITH</span> seller_revenue <span class="k">AS</span> (
+  <span class="k">SELECT</span> s.seller_state, s.seller_id,
+         <span class="k">SUM</span>(i.price + i.freight_value) <span class="k">AS</span> revenue
+  <span class="k">FROM</span> order_items i
+  <span class="k">JOIN</span> orders o  <span class="k">ON</span> o.order_id  = i.order_id
+  <span class="k">JOIN</span> sellers s <span class="k">ON</span> s.seller_id = i.seller_id
+  <span class="k">WHERE</span> o.order_status = 'delivered'
+  <span class="k">GROUP BY</span> s.seller_state, s.seller_id
+)
+<span class="k">SELECT</span> *,
+       <span class="k">DENSE_RANK</span>() <span class="k">OVER</span> (
+         <span class="k">PARTITION BY</span> seller_state
+         <span class="k">ORDER BY</span> revenue <span class="k">DESC</span>
+       ) <span class="k">AS</span> state_rank
+<span class="k">FROM</span> seller_revenue;</pre>
+        <figcaption>One of nine analysis queries</figcaption>
+      </figure>
+      <div>
+        <h3>Olist marketplace SQL analysis</h3>
+        <p class="tools">PostgreSQL</p>
+        <p class="finding">Late delivery is the clearest driver of bad reviews, and fewer than 20% of sellers bring in 80% of revenue.</p>
+        <p>The same marketplace data, rebuilt as an eight-table relational schema with keys and constraints. I ran data quality checks before analysis, then wrote queries for monthly revenue growth, cohort retention, RFM customer segments, seller rankings and time to second order, using CTEs and window functions.</p>
+        <div class="more-links"><a href="https://github.com/daesaw2272/Marketplace-SQL">View the code on GitHub</a></div>
+      </div>
+    </article>
+
+    <article class="project" id="retail-forecast">
+      <figure class="media">
+        <table>
+          <caption>Mean absolute percentage error on the test period (lower is better)</caption>
+          <thead><tr><th scope="col">State</th><th scope="col">Seasonal naive</th><th scope="col">Holt-Winters</th><th scope="col">SARIMA</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">New South Wales</th><td>1.77%</td><td>1.80%</td><td class="best"><span>1.36%</span></td></tr>
+            <tr><th scope="row">Victoria</th><td>2.81%</td><td>2.18%</td><td class="best"><span>1.46%</span></td></tr>
+            <tr><th scope="row">Western Australia</th><td>3.90%</td><td>2.65%</td><td class="best"><span>1.38%</span></td></tr>
+          </tbody>
+        </table>
+      </figure>
+      <div>
+        <h3>Australian retail turnover forecasting</h3>
+        <p class="tools">Python, pandas, statsmodels</p>
+        <p class="finding">SARIMA beat both alternatives in every state, cutting average error by up to 65% against a seasonal baseline.</p>
+        <p>Monthly retail turnover from the ABS for three states, cleaned in pandas. The series show strong annual seasonality and long-term growth, so I compared a seasonal naive baseline, Holt-Winters and SARIMA on a time-based train and test split, scored on MAE, RMSE and MAPE.</p>
+      </div>
+    </article>
+
+    <article class="project" id="trade">
+      <figure class="media">
+        <img src="assets/trade-dashboard.jpg" width="1146" height="809" loading="lazy" alt="Tableau dashboard of Australian exports and imports by product category from 1988 to 2024, with commentary on each category">
+        <figcaption>Exports and imports by product category, 1988 to 2024</figcaption>
+      </figure>
+      <div>
+        <h3>Australia trade trends</h3>
+        <p class="tools">Tableau, Excel</p>
+        <p class="finding">Natural gas rose from 2% to nearly 40% of energy exports, while coal's share fell from about 85% to 55%.</p>
+        <p>Thirty-seven years of ABS trade data across ten product categories, shown three ways: dollar value, growth index and share of total. Built as Tableau dashboards and a story, with commentary on what drove each shift.</p>
+      </div>
+    </article>
+
+    <article class="project" id="aged-care">
+      <figure class="media">
+        <img src="assets/dea-efficiency.jpg" width="1600" height="890" loading="lazy" alt="Bar chart of efficiency scores for 23 aged care facilities, grouped into efficient, near-efficient and inefficient against a 0.90 target">
+        <figcaption>Efficiency scores across 23 facilities (anonymised)</figcaption>
+      </figure>
+      <div>
+        <h3>Aged care efficiency benchmarking</h3>
+        <p class="tools">Python, SciPy, pandas, Excel</p>
+        <p class="finding">Five facilities set the benchmark, and the two least efficient needed about 40% more output to match their peers.</p>
+        <p>A capstone project with two aged care providers. We used Data Envelopment Analysis to compare how well each facility turned staffing into quality outcomes, adjusting for how complex each facility's residents were.</p>
+        <p class="role">Group of six. I built the DEA model and code and the resident acuity index.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="other" aria-labelledby="other-h">
+    <h2 id="other-h">Other work</h2>
+    <ul>
+      <li><strong>Fashion image recommendations</strong><span>TensorFlow and nearest neighbour search on 44,000 product photos. 90% of the top three recommendations match the product type.</span></li>
+      <li><strong>Fake news detection</strong><span>LSTM and SVM models on 22,730 headlines. Adding the news source lifted accuracy from 77% to 82%.</span></li>
+      <li><strong>Data cleaning toolkit</strong><span>A Streamlit app that profiles and cleans messy CSV and Excel files without code.</span></li>
+    </ul>
+  </section>
+
+  <section class="skills" aria-labelledby="skills-h">
+    <h2 id="skills-h">Skills</h2>
+    <dl>
+      <dt>BI and visualisation</dt><dd>Power BI (DAX, Power Query, data modelling), Tableau, Excel</dd>
+      <dt>SQL</dt><dd>PostgreSQL, joins, CTEs, window functions, views, schema design</dd>
+      <dt>Python</dt><dd>pandas, NumPy, matplotlib, statsmodels, scikit-learn, SciPy, Streamlit</dd>
+      <dt>Analytics</dt><dd>Data cleaning, KPI reporting, cohort analysis, segmentation, forecasting</dd>
+      <dt>Languages</dt><dd>English, Burmese, Thai</dd>
+    </dl>
+  </section>
+</main>
+
+<footer class="wrap"><div class="inner">
+  <p>Looking for a graduate data analyst or BI analyst role.</p>
+  <nav class="links" aria-label="Contact">
+    <a href="mailto:kankhoukkyaw@gmail.com">kankhoukkyaw@gmail.com</a>
+    <a href="https://www.linkedin.com/in/kaungkhantkyawken/">LinkedIn</a>
+    <a href="https://github.com/daesaw2272">GitHub</a>
+  </nav>
+</div></footer>
+</body>
+</html>
