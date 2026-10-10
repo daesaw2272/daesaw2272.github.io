@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaung Khant (Ken) Kyaw</title>
+<meta name="description" content="Data analysis projects by Kaung Khant (Ken) Kyaw, using SQL, Power BI, Tableau and Python.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --side:#eaf0f5;
+  --ink:#232629;
+  --soft:#5d6670;
+  --line:#dfe4e8;
+  --blue:#1d4f91;
+  --sans:"Libre Franklin",Arial,sans-serif;
+  --serif:"Literata",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.65}
+a{color:var(--blue);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+img{max-width:100%;height:auto;display:block}
+figure{margin:0}
+
+.layout{display:grid;grid-template-columns:320px minmax(0,1fr);min-height:100vh}
+
+/* sidebar */
+.side{background:var(--side);padding:56px 36px}
+.side-inner{position:sticky;top:56px}
+.side h1{font-family:var(--sans);font-weight:700;font-size:30px;line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+.side p{font-size:16px;line-height:1.55;color:var(--soft);margin:0 0 28px}
+.side ul{list-style:none;margin:0;padding:0;font-family:var(--sans);font-weight:500;font-size:16px}
+.side li{margin:0 0 10px}
+.side nav + nav{margin-top:36px;padding-top:24px;border-top:1px solid #cfd8e0}
+.side .jump a{color:var(--ink);text-decoration:none}
+.side .jump a:hover{color:var(--blue);text-decoration:underline}
+
+/* main column */
+main{padding:56px 64px 80px;max-width:860px}
+.intro{font-size:21px;line-height:1.6;margin:0 0 64px;max-width:34em}
+h2{font-family:var(--sans);font-size:22px;font-weight:700;margin:0 0 28px}
+.project{margin:0 0 72px}
+.project h3{font-family:var(--sans);font-size:24px;font-weight:700;line-height:1.25;margin:0 0 4px}
+.made-with{font-family:var(--sans);font-size:15px;color:var(--soft);margin:0 0 20px}
+.shot{border:1px solid var(--line);margin:0 0 20px}
+.shot figcaption{font-family:var(--sans);font-size:14px;color:var(--soft);padding:10px 14px;border-top:1px solid var(--line)}
+.project p{margin:0 0 14px;max-width:36em}
+.project .link{font-family:var(--sans);font-weight:600;font-size:16px;margin-top:4px}
+.note{font-style:italic;color:var(--soft)}
+
+pre{margin:0;background:#20262c;color:#e6e9ec;padding:20px 22px;overflow:auto;font:14px/1.6 Consolas,"SFMono-Regular",Menlo,monospace}
+pre b{color:#9ec5ef;font-weight:600}
+pre i{color:#98a3ae;font-style:normal}
+
+table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:15px}
+th,td{padding:10px 14px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+thead th{background:#f4f6f8;font-weight:600}
+tbody th{font-weight:500}
+td.low{color:var(--blue);font-weight:700}
+
+.other{margin:0 0 72px;padding:0;list-style:none}
+.other li{margin:0 0 18px;max-width:36em}
+.other b{font-family:var(--sans)}
+
+.skills{margin:0 0 72px;padding:0;list-style:none}
+.skills li{margin:0 0 10px;max-width:38em}
+.skills b{font-family:var(--sans);font-weight:600}
+
+footer{border-top:1px solid var(--line);padding-top:24px;font-family:var(--sans);font-size:15px;color:var(--soft)}
+footer a{margin-right:18px}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .side{padding:36px 22px 28px}
+  .side-inner{position:static}
+  .side p{margin-bottom:20px}
+  .side ul{display:flex;flex-wrap:wrap;gap:4px 20px}
+  .side li{margin:0}
+  .side .jump{display:none}
+  main{padding:36px 22px 56px}
+  .intro{font-size:19px;margin-bottom:48px}
+  .project{margin-bottom:56px}
+  th,td{padding:8px 8px;font-size:14px}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="side">
+    <div class="side-inner">
+      <h1>Kaung Khant (Ken) Kyaw</h1>
+      <p>Data analyst based in Sydney. Studying Computing Science (Honours) at UTS.</p>
+      <nav aria-label="Profiles">
+        <ul>
+          <li><a href="mailto:kankhoukkyaw@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/kaungkhantkyawken/">LinkedIn</a></li>
+          <li><a href="https://github.com/daesaw2272">GitHub</a></li>
+          <li><a href="KaungKhantKyaw_CV.pdf">CV</a></li>
+        </ul>
+      </nav>
+      <nav class="jump" aria-label="Projects on this page">
+        <ul>
+          <li><a href="#olist-dashboard">E-commerce dashboard</a></li>
+          <li><a href="#olist-sql">Marketplace SQL</a></li>
+          <li><a href="#retail-forecast">Retail forecasting</a></li>
+          <li><a href="#trade">Australia trade</a></li>
+          <li><a href="#aged-care">Aged care benchmarking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main>
+    <p class="intro">Hi, I'm Ken. I like taking a messy dataset and working out what it actually says. Most of my work is in SQL and Power BI, with Tableau and Python when the problem needs them. I interned as a data analyst at KBZ Bank, and these are some of the projects I've done since.</p>
+
+    <h2>Projects</h2>
+
+    <article class="project" id="olist-dashboard">
+      <h3>E-commerce performance dashboard</h3>
+      <p class="made-with">Power BI, DAX, Power Query</p>
+      <figure class="shot">
+        <img src="assets/olist-dashboard.jpg" width="839" height="475" alt="Power BI executive summary page showing orders by month, on-time delivery rate, total revenue, top product categories and orders by state">
+        <figcaption>The executive summary page. The report has four pages.</figcaption>
+      </figure>
+      <p>I built this report on Olist's public data: about 99,000 orders from a Brazilian online marketplace, split across nine tables. I modelled the relationships and wrote 18 DAX measures for delivery, revenue, customer and seller KPIs.</p>
+      <p>Delivery turned out to be mostly fine, with 92% of orders arriving on time. The bigger issue was that only 3% of customers ever came back for a second order.</p>
+      <p class="link"><a href="https://drive.google.com/drive/folders/1BcvSmQ5IN4rUlsfI_-hJqbkY0EPMmRIV?usp=sharing">Download the Power BI files</a></p>
+    </article>
+
+    <article class="project" id="olist-sql">
+      <h3>Marketplace analysis in SQL</h3>
+      <p class="made-with">PostgreSQL</p>
+      <figure class="shot">
+<pre aria-label="SQL query ranking the top sellers in each state"><i>-- top sellers in each state</i>
+<b>WITH</b> seller_revenue <b>AS</b> (
+  <b>SELECT</b> s.seller_state, s.seller_id,
+         <b>SUM</b>(i.price + i.freight_value) <b>AS</b> revenue
+  <b>FROM</b> order_items i
+  <b>JOIN</b> orders o  <b>ON</b> o.order_id  = i.order_id
+  <b>JOIN</b> sellers s <b>ON</b> s.seller_id = i.seller_id
+  <b>WHERE</b> o.order_status = 'delivered'
+  <b>GROUP BY</b> s.seller_state, s.seller_id
+)
+<b>SELECT</b> *,
+       <b>DENSE_RANK</b>() <b>OVER</b> (
+         <b>PARTITION BY</b> seller_state
+         <b>ORDER BY</b> revenue <b>DESC</b>
+       ) <b>AS</b> state_rank
+<b>FROM</b> seller_revenue;</pre>
+        <figcaption>One of the nine queries in the project</figcaption>
+      </figure>
+      <p>Same data, but this time I loaded it into PostgreSQL with a proper schema, checked it for quality problems, and answered nine business questions in SQL: revenue trends, cohort retention, customer segments, seller rankings and how long people wait before ordering again.</p>
+      <p>The clearest result: late orders average under 3 stars, compared with about 4.2 for orders that arrive on time. Revenue is also concentrated, with fewer than 20% of sellers making 80% of it.</p>
+      <p class="link"><a href="https://github.com/daesaw2272/Marketplace-SQL">See the code on GitHub</a></p>
+    </article>
+
+    <article class="project" id="retail-forecast">
+      <h3>Forecasting Australian retail turnover</h3>
+      <p class="made-with">Python, pandas, statsmodels</p>
+      <figure class="shot">
+        <table>
+          <thead><tr><th scope="col">Error on test months (MAPE)</th><th scope="col">Seasonal naive</th><th scope="col">Holt-Winters</th><th scope="col">SARIMA</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">New South Wales</th><td>1.77%</td><td>1.80%</td><td class="low">1.36%</td></tr>
+            <tr><th scope="row">Victoria</th><td>2.81%</td><td>2.18%</td><td class="low">1.46%</td></tr>
+            <tr><th scope="row">Western Australia</th><td>3.90%</td><td>2.65%</td><td class="low">1.38%</td></tr>
+          </tbody>
+        </table>
+        <figcaption>Lower is better. SARIMA had the lowest error in every state.</figcaption>
+      </figure>
+      <p>I cleaned the ABS monthly retail turnover series for three states and compared three forecasting models on months held back from training. Retail has a strong yearly pattern and steady growth, which is why SARIMA did well here.</p>
+      <p>A simple seasonal baseline was hard to beat in New South Wales, where Holt-Winters did slightly worse than it. That's the reason I always check models against a baseline first.</p>
+    </article>
+
+    <article class="project" id="trade">
+      <h3>Australia's trade over 37 years</h3>
+      <p class="made-with">Tableau, Excel</p>
+      <figure class="shot">
+        <img src="assets/trade-dashboard.jpg" width="1146" height="809" loading="lazy" alt="Tableau dashboard of Australian exports and imports by product category from 1988 to 2024, with commentary on each category">
+        <figcaption>Exports and imports by product category, 1988 to 2024</figcaption>
+      </figure>
+      <p>A set of Tableau dashboards on ABS import and export data for ten product categories, looking at dollar value, growth and share of the total.</p>
+      <p>The biggest shift was in energy. Gas went from about 2% of energy exports to nearly 40%, while coal's share dropped from around 85% to 55%.</p>
+    </article>
+
+    <article class="project" id="aged-care">
+      <h3>Benchmarking aged care facilities</h3>
+      <p class="made-with">Python, SciPy, pandas, Excel</p>
+      <figure class="shot">
+        <img src="assets/dea-efficiency.jpg" width="1600" height="890" loading="lazy" alt="Bar chart of efficiency scores for 23 aged care facilities, grouped into efficient, near-efficient and inefficient against a 0.90 target">
+        <figcaption>Efficiency scores for 23 facilities, with names removed</figcaption>
+      </figure>
+      <p>Our capstone with two aged care providers. We compared 23 facilities on how well they turned staffing into quality and resident experience, using Data Envelopment Analysis and adjusting for how complex each facility's residents were.</p>
+      <p>Five facilities came out as the benchmark. The two weakest needed roughly 40% more output to catch up with similar peers.</p>
+      <p class="note">Team of six. I wrote the DEA model and the resident acuity index.</p>
+    </article>
+
+    <h2>Smaller projects</h2>
+    <ul class="other">
+      <li><b>Fashion image recommendations.</b> A TensorFlow model that suggests similar products from a photo, trained on 44,000 items. 90% of its top three suggestions are the right product type.</li>
+      <li><b>Fake news detection.</b> LSTM and SVM models on 22,730 headlines. Adding the news source to the model lifted accuracy from 77% to 82%.</li>
+      <li><b>Data cleaning app.</b> A Streamlit tool for profiling and cleaning messy CSV and Excel files without writing code.</li>
+    </ul>
+
+    <h2>Tools I use</h2>
+    <ul class="skills">
+      <li><b>BI:</b> Power BI (DAX, Power Query, data modelling), Tableau, Excel</li>
+      <li><b>SQL:</b> PostgreSQL, joins, CTEs, window functions, schema design</li>
+      <li><b>Python:</b> pandas, NumPy, matplotlib, statsmodels, scikit-learn, Streamlit</li>
+      <li><b>Languages I speak:</b> English, Burmese and Thai</li>
+    </ul>
+
+    <footer>
+      <a href="mailto:kankhoukkyaw@gmail.com">kankhoukkyaw@gmail.com</a>
+      <a href="https://www.linkedin.com/in/kaungkhantkyawken/">LinkedIn</a>
+      <a href="https://github.com/daesaw2272">GitHub</a>
+    </footer>
+  </main>
+</div>
+</body>
+</html>
